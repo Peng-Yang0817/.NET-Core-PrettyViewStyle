@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NoteDotNetCoreUseReverseEngineering</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NoteDotNetCoreUseReverseEngineering.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/sweetalert2.min.css" />
+    @*自定義CSS引入區*@
+    <link rel="stylesheet" href="~/css/_LatoutCustomize.css" />
+
+</head>
+<style>
+    /* 選單靠右對齊 */
+    .navbar-nav {
+        justify-content: flex-end; 
+    }
+
+    /* 選單父層區塊靠右對齊，並設定內元素水平與上下的屬性 */
+    .navbar-collapse {
+        display: flex;
+        justify-content: flex-end;
+        align-items:flex-end;
+        margin-right: calc(10vh); /* 靠右對齊並留有10vh的空間 */
+    }
+
+    
+
+</style>
+@* Header 區塊 *@
+<body style="background:#e8f4f8">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="background:#b4d8e7;padding:0px">
+            <div class="container-fluid" style="background:#b4d8e7">
+                <a class="navbar-brand" id="mainHomeTag" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img id="logo" src="~/img/fishlogo.png" height="120" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" style="height:130px;">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item itemHoverstyle">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color:#A0202D">Home</a>
+                        </li>
+                        <li class="nav-item itemHoverstyle">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy" style="color:#A0202D">Privacy</a>
+                        </li>
+                        <li class="nav-item dropdown itemHoverstyle">
+                            <button id="AuthEdit" class="nav-link dropdown-toggle btn btn-defort" data-bs-toggle="dropdown" style="font-weight:bolder;color:#A0202D;font-size:xx-large" disabled>AuthEdit</button>
+                            <ul class="dropdown-menu">
+                                <li class="dropDownMenuMarginSet">
+                                    <a class="nav-link text-dark" asp-area="Auth" asp-controller="Auth001" asp-action="Auth001Create">Create</a>
+                                </li>
+                                <li class="dropDownMenuMarginSet">
+                                    <a class="nav-link text-dark" asp-area="Auth" asp-controller="Auth001" asp-action="Auth001Delect">Delect</a>
+                                </li>
+                                <li class="dropDownMenuMarginSet">
+                                    <a class="nav-link text-dark" asp-area="Auth" asp-controller="Auth001" asp-action="Auth001UpdatePassword">Update</a>
+                                </li>
+                                @*<li><a class="dropdown-item" href="#">Link 2</a></li>
+                                <li><a class="dropdown-item" href="#">Link 3</a></li>*@
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    @* body 區塊 *@
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    @* footer 區塊 *@
+    <footer class="border-top footer text-muted" style="background:#b0ddb4">
+        <div class="container">
+            &copy; 2023 - NoteDotNetCoreUseReverseEngineering - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/sweetalert2.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+﻿.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+#AuthEdit:disabled {
+    color: black;
+    opacity: 0.9;
+    padding: 8;
+}
+
+/*針對介面的navbar-brand做設定，便利RWD*/
+@media only screen and (max-width:600px) {
+    .navbar-brand {
+        padding-left: 0;
+    }
+}
+
+@media only screen and (min-width:600px) {
+    .navbar-brand {
+        padding-left: 10vh;
+    }
+}
+
+li.dropDownMenuMarginSet {
+    font-weight:bolder;
+    padding-left:0px;
+    background-color: #FFFFFF; /* 背景顏色設為白色 */
+    transition: all 1s; /* 背景顏色變化的過渡時間為1秒 */
+}
+
+    li.dropDownMenuMarginSet:hover {
+        padding-left: 8px;
+        background: linear-gradient(to right, #FFD700, #FFA500); /* 亮色系的漸變色彩 */
+    }
+
+.itemHoverstyle {
+    font-family: “Comic Sans MS”, “Comic Sans”, monospace;
+    font-weight: bolder;
+    font-size: xx-large;
+    transition: all 1s;
+}
+
+    .itemHoverstyle:hover {
+        color: greenyellow;
+        transform: rotate(2deg); /* 滑鼠懸停時旋轉2度 */
+        transition: transform 0.3s; /* 添加0.3秒的過渡效果 */
+    }
